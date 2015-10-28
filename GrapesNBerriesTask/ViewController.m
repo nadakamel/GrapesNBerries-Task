@@ -27,16 +27,13 @@
     productsPrice = [[NSMutableArray alloc] init];
     productsDesc = [[NSMutableArray alloc] init];
     [self getJSONdata:@"10" :@"1"];
+    
+    [self.activityIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.myCollectionView reloadData];
 }
 
 // For fetching and parsing JSON data
@@ -66,6 +63,7 @@
              }
              
              [self.myCollectionView reloadData];
+             [self.activityIndicator stopAnimating];
          }
      }];
 }
@@ -142,7 +140,7 @@
 
 // Adjusts span between each cell
 - (UIEdgeInsets) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(3, 3, 3, 3);
+    return UIEdgeInsetsMake(1, 10, 1, 10);
 }
 
 @end
