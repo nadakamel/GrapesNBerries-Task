@@ -11,11 +11,13 @@
 #import "HeaderCollectionReusableView.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) NSArray *products;
+@property (nonatomic, strong) NSMutableArray *productsImage, *productsDesc, *productsPrice, *productsImageWidth, *productsImageHeight;
 
 @end
 
 @implementation ViewController
+@synthesize products, productsPrice, productsImage, productsImageWidth, productsImageHeight, productsDesc;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -128,7 +130,7 @@
     
     // Set description of each product cell
     NSString *desc = [productsDesc objectAtIndex:indexPath.row];
-    productCell.descTextView.text = desc;
+    productCell.descLabel.text = desc;
     
     return productCell;
 }
