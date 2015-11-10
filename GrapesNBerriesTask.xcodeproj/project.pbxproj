@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8945C5D11BDEEF58006E024B /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8945C5D01BDEEF58006E024B /* HeaderCollectionReusableView.m */; settings = {ASSET_TAGS = (); }; };
+		8158BDB061AB3DFEBE9D8400 /* libPods-GrapesNBerriesTask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB3AB45CA70F9F6AE7F0673 /* libPods-GrapesNBerriesTask.a */; };
+		891586951BF2369800D2F1B7 /* productModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 891586941BF2369800D2F1B7 /* productModel.m */; };
+		8945C5D11BDEEF58006E024B /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8945C5D01BDEEF58006E024B /* HeaderCollectionReusableView.m */; };
 		896A1FCC1BDD244F0065CC62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A1FCB1BDD244F0065CC62 /* main.m */; };
 		896A1FCF1BDD244F0065CC62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A1FCE1BDD244F0065CC62 /* AppDelegate.m */; };
 		896A1FD21BDD244F0065CC62 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A1FD11BDD244F0065CC62 /* ViewController.m */; };
 		896A1FD51BDD244F0065CC62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896A1FD31BDD244F0065CC62 /* Main.storyboard */; };
 		896A1FD71BDD244F0065CC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896A1FD61BDD244F0065CC62 /* Assets.xcassets */; };
 		896A1FDA1BDD244F0065CC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896A1FD81BDD244F0065CC62 /* LaunchScreen.storyboard */; };
-		896A1FE31BDD31830065CC62 /* ProductViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A1FE21BDD31830065CC62 /* ProductViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		896A1FE31BDD31830065CC62 /* ProductViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 896A1FE21BDD31830065CC62 /* ProductViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891586931BF2369800D2F1B7 /* productModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productModel.h; sourceTree = "<group>"; };
+		891586941BF2369800D2F1B7 /* productModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productModel.m; sourceTree = "<group>"; };
 		8945C5CF1BDEEF58006E024B /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		8945C5D01BDEEF58006E024B /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		896A1FC71BDD244F0065CC62 /* GrapesNBerriesTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapesNBerriesTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +36,9 @@
 		896A1FDB1BDD244F0065CC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		896A1FE11BDD31830065CC62 /* ProductViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewCell.h; sourceTree = "<group>"; };
 		896A1FE21BDD31830065CC62 /* ProductViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewCell.m; sourceTree = "<group>"; };
+		BD879C2A4D9E923FCA3B25A0 /* Pods-GrapesNBerriesTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrapesNBerriesTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrapesNBerriesTask/Pods-GrapesNBerriesTask.debug.xcconfig"; sourceTree = "<group>"; };
+		EFB3AB45CA70F9F6AE7F0673 /* libPods-GrapesNBerriesTask.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GrapesNBerriesTask.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA65E2F6F58D89845F892E40 /* Pods-GrapesNBerriesTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrapesNBerriesTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrapesNBerriesTask/Pods-GrapesNBerriesTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +46,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8158BDB061AB3DFEBE9D8400 /* libPods-GrapesNBerriesTask.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ED05E6F57F5141E0BDB4E65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD879C2A4D9E923FCA3B25A0 /* Pods-GrapesNBerriesTask.debug.xcconfig */,
+				FA65E2F6F58D89845F892E40 /* Pods-GrapesNBerriesTask.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		87B67EF40347831EEB001E2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB3AB45CA70F9F6AE7F0673 /* libPods-GrapesNBerriesTask.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		896A1FBE1BDD244F0065CC62 = {
 			isa = PBXGroup;
 			children = (
 				896A1FC91BDD244F0065CC62 /* GrapesNBerriesTask */,
 				896A1FC81BDD244F0065CC62 /* Products */,
+				1ED05E6F57F5141E0BDB4E65 /* Pods */,
+				87B67EF40347831EEB001E2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +99,8 @@
 				8945C5D01BDEEF58006E024B /* HeaderCollectionReusableView.m */,
 				896A1FE11BDD31830065CC62 /* ProductViewCell.h */,
 				896A1FE21BDD31830065CC62 /* ProductViewCell.m */,
+				891586931BF2369800D2F1B7 /* productModel.h */,
+				891586941BF2369800D2F1B7 /* productModel.m */,
 				896A1FD31BDD244F0065CC62 /* Main.storyboard */,
 				896A1FD61BDD244F0065CC62 /* Assets.xcassets */,
 				896A1FD81BDD244F0065CC62 /* LaunchScreen.storyboard */,
@@ -96,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 896A1FDE1BDD244F0065CC62 /* Build configuration list for PBXNativeTarget "GrapesNBerriesTask" */;
 			buildPhases = (
+				8DFB4FFE9A38B14253FF6199 /* Check Pods Manifest.lock */,
 				896A1FC31BDD244F0065CC62 /* Sources */,
 				896A1FC41BDD244F0065CC62 /* Frameworks */,
 				896A1FC51BDD244F0065CC62 /* Resources */,
+				D967BD0A535EE1AF3B41880A /* Embed Pods Frameworks */,
+				B1AD930387B5FBF1E1C920A8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,6 +187,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8DFB4FFE9A38B14253FF6199 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B1AD930387B5FBF1E1C920A8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrapesNBerriesTask/Pods-GrapesNBerriesTask-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D967BD0A535EE1AF3B41880A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrapesNBerriesTask/Pods-GrapesNBerriesTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		896A1FC31BDD244F0065CC62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -163,6 +243,7 @@
 				8945C5D11BDEEF58006E024B /* HeaderCollectionReusableView.m in Sources */,
 				896A1FE31BDD31830065CC62 /* ProductViewCell.m in Sources */,
 				896A1FD21BDD244F0065CC62 /* ViewController.m in Sources */,
+				891586951BF2369800D2F1B7 /* productModel.m in Sources */,
 				896A1FCF1BDD244F0065CC62 /* AppDelegate.m in Sources */,
 				896A1FCC1BDD244F0065CC62 /* main.m in Sources */,
 			);
@@ -272,6 +353,7 @@
 		};
 		896A1FDF1BDD244F0065CC62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD879C2A4D9E923FCA3B25A0 /* Pods-GrapesNBerriesTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GrapesNBerriesTask/Info.plist;
@@ -283,6 +365,7 @@
 		};
 		896A1FE01BDD244F0065CC62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA65E2F6F58D89845F892E40 /* Pods-GrapesNBerriesTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GrapesNBerriesTask/Info.plist;
