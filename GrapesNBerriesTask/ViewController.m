@@ -13,11 +13,14 @@
 #import "HeaderCollectionReusableView.h"
 #import "productModel.h"
 
+#define CELL_IDENTIFIER @"cell_ID"
+#define HEADER_IDENTIFIER @"HeaderView"
+
 @interface ViewController ()
 {
+    int productsFrom, productsCount;
     CGFloat cellWidth, cellHeight;
     __block NSMutableArray *products;
-    int count, from;
 }
 @end
 
@@ -25,9 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self setTitle:@"Products"];
     products = [NSMutableArray new];
-    [self asyncGetJSONdata:10 :1];
+    productsFrom = 1, productsCount = 10;
+    [self asyncGetJSONdata];
     [self.activityIndicator startAnimating];
 }
 
@@ -36,10 +39,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-// Get data asyncronus
-- (void) asyncGetJSONdata: (int)count :(int)from {
+- (void) asyncGetJSONdata {
     // 1
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"https://grapesnberries.getsandbox.com/products?count=%i&from=%i", count, from]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"https://grapesnberries.getsandbox.com/products?count=%i&from=%i", productsCount, productsFrom]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     // 2
@@ -49,20 +51,27 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 3
-        for (NSDictionary *dic in responseObject) {
+        for(int i = 0; i < productsCount; i++)
+        {
+            NSDictionary *dic = [responseObject objectAtIndex:i];
             productModel *model = [[productModel alloc]initWithData:dic];
             [products addObject:model];
         }
+        
+//        for (NSDictionary *dic in responseObject) {
+//            productModel *model = [[productModel alloc]initWithData:dic];
+//            [products addObject:model];
+//        }
         [self.myCollectionView reloadData];
         [self.activityIndicator stopAnimating];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     // 4
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Products Data"
                                                         message:[error localizedDescription]
                                                         delegate:nil
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alertView show];
     }];
@@ -71,23 +80,12 @@
     [operation start];
 }
 
-// Resize image to UIImageView boundaries
-- (UIImage*)resizeImage:(UIImage *)image imageSize:(CGSize)size
-{
-    UIGraphicsBeginImageContext(size);
-    [image drawInRect:CGRectMake(0,0,size.width,size.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    // here is the scaled image which has been changed to the size specified
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
 #pragma UICollectionView Header
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         
-        HeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        HeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HEADER_IDENTIFIER forIndexPath:indexPath];
         
         header.headerLabel.text = @"Products";
         
@@ -108,11 +106,18 @@
     return products.count;
 }
 
+// Dynamic loading of data.
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == [products count] - 1 ) {
+        productsFrom+=10;
+        [self asyncGetJSONdata];
+    }
+}
+
 // Content of each cell
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    ProductViewCell *productCell = [collectionView  dequeueReusableCellWithReuseIdentifier:@"cell_ID" forIndexPath:indexPath];
-    
+    ProductViewCell *productCell = [collectionView  dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     productModel *model = [products objectAtIndex:indexPath.row];
     
     // Set image of each product cell

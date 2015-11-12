@@ -13,7 +13,6 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *myCollectionView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-- (UIImage*)resizeImage:(UIImage *)image imageSize:(CGSize)size;
-- (void) asyncGetJSONdata: (int)count :(int)from;
+- (void) asyncGetJSONdata;
 @end
 
